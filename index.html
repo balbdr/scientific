@@ -1,0 +1,147 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bal Bahadur Bhandari</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+       <div class="container">
+        <div class="calculator">
+            
+        </div>
+        <div class="display">
+            <input id="screen" placeholder="0">
+        </div>
+    <div class="btns">
+        <div class="row">
+            <button onclick="sin()">sin</button>
+            <button onclick="cos()">cos</button>
+            <button onclick="tan()">tan</button>
+            <button onclick="pow()">x<sup>2</sup></button>
+            
+            <button class="btn"onclick="sqrt()">✔</button>
+        </div>
+        <div class="row">
+            <button onclick="screen.value=''" class="ac">AC</button>
+            <button class="btn">7</button>
+            <button class="btn">4</button>
+            <button class="btn">1</button>
+            <button class="btn">0</button>
+        </div>
+        <div class="row">
+            <button class="btn">%</button>
+            <button class="btn">4</button>
+            <button class="btn">5</button>
+            <button class="btn">2</button>
+            <button class="btn">•</button>
+        </div>
+        <div class="row">
+            <button onclick="screen.value=screen.value.toString().slice(0,-1)" class="c">C</button>
+            <button class="btn">9</button>
+            <button class="btn">6</button>
+            <button class="btn">3</button>
+            <button class="btn">log</button>
+        </div>
+        <div class="row">
+            <button class="btn">-:-</button>
+            <button class="btn">x</button>
+            <button class="btn">-</button>
+            <button class="btn">+</button>
+            <button onclick="screen.value=eval(screen.value)" class="equal">=</button>
+        </div>
+    </div>
+    
+       </div>
+    
+    </body>
+    <script>
+        var screen=document.querySelector('#screen');
+        var btn=document.querySelectorAll('.btn');
+    
+        for(item of btn)
+        {
+            item.addEventListener('click',(e)=>{
+                btntext=e.target.innerText;
+            
+                if(btntext=='x')
+            {
+                btntext='*';
+            }
+            
+            if(btntext=='-:-')
+            {
+                btntext='/';
+            }
+            if(btntext=='x<sup>y</>')
+            {
+                btntext='x^y';
+    
+            }
+            if (btntext == 'AC') {
+                screen.value = '';
+                return;
+            }
+            if(btntext=='%')
+            {
+                btntext='/100'
+            }
+            if(btntext=='✔') {
+                screen.value = Math.sqrt(screen.value);
+                return;
+            }
+            
+            if(btntext=='log') {
+                screen.value = Math.log(screen.value);
+                return;
+            }   
+            
+            if(btntext=='•')
+            {
+                btntext='.';
+            }
+           
+                screen.value+=btntext;
+            
+            })
+        }
+        
+    function sin() {
+        var radians = degreesToRadians(screen.value);
+         screen.value = Math.sin(radians);
+        
+    }
+        
+    function cos() {
+        var radians = degreesToRadians(screen.value);
+        screen.value = Math.cos(radians);
+    }
+    
+    function tan() {
+        var radians = degreesToRadians(screen.value);
+        screen.value = Math.tan(radians);
+    }
+    
+    function pow() {
+        const base = parseFloat(screen.value);
+        const exponent = 2; // Default exponent
+        screen.value = Math.pow(base, exponent);
+    } 
+    
+        function degreesToRadians(degrees) {
+        return degrees * (Math.PI/ 180);
+    
+    }
+    
+    function radiansToDegrees() {
+        const radians = parseFloat(screen.value);
+        screen.value = radians * (180 / Math.PI);
+    }
+         
+    screen.value+=btntext;
+      
+        </script>
+    </html>
+   
