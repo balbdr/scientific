@@ -20,7 +20,7 @@ body
                              -12px -12px 20px color#a7abb1;
 }
 .display #screen{
-    width: 90%;
+    width: 95%;
     height: 70px;
     font-size: 20px;
     outline: none;
@@ -33,7 +33,7 @@ body
                 -8px -8px 8px color#ffffff;
 }
 .btns{
-    width: 90%;
+    width: 95%;
     margin-top: 1.7em;
     display: flex;
     justify-content: center;
@@ -41,8 +41,8 @@ body
     flex-direction: row ;
 }
 .btns .row button{
-    width: 90%;
-    height: 30px;
+    width: 95%;
+    height: 35px;
     font-size: 16px;
     border: none;
     outline: none;
