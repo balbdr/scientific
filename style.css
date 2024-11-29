@@ -22,7 +22,7 @@ body
 .display #screen{
     width: 95%;
     height: 70px;
-    font-size: 30px;
+    font-size: 25px;
     outline: none;
     border: none;
     text-align: right;
